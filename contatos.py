@@ -4,7 +4,7 @@ from unidecode import unidecode #Para comparacao das Strings (sem acento)
 
 def compare(search2, names, numbers):
     for j in range(len(names)):
-        if(search2.lower() in unidecode(names[j].lower())):
+        if(unidecode(search2.lower()) in unidecode(names[j].lower())):
             print(str(names[j]) +  str(numbers[j]))
     print('\n')
 
