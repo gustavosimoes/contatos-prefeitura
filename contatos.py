@@ -3,10 +3,13 @@ from bs4 import BeautifulSoup
 from unidecode import unidecode #Para comparacao das Strings (sem acento)
 
 def compare(search2, names, numbers):
+    flag2 = True
     for j in range(len(names)):
         if(unidecode(search2.lower()) in unidecode(names[j].lower())):
             print(str(names[j]) +  str(numbers[j]))
-    print('\n')
+            flag2 = False
+    if(flag2):
+        print('\nNada Encontrado')    
 
 
 
@@ -39,19 +42,26 @@ while(flag):
     inp = str(input()).strip()
     
     if(inp =='1'):
+        print('\n')
         arquivo = open('newcontacts.txt', 'w')
         for j in range(len(namelist)):
             arquivo.write(str(namelist[j]) +  str(numberlist[j]))
         arquivo.close()
+        print('Dados salvos em "newcontacts.txt"\n')
     elif(inp == '2'):
+        print('\n')
         compare(' ', namelist, numberlist)
+        print('\n')
     elif(inp == '3'):
+        print('\n')
         search = str(input('Qual contato você procura? ')).strip()
         compare(search, namelist, numberlist)
+        print('\n')
     elif(inp == '4'):
+        print('\nFinalizando...\n')
         flag = False
     else:
-        print('Numero Inválido')
+        print('\nNumero Inválido\n')
 
 
 
