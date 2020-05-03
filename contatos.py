@@ -61,7 +61,7 @@ while(flag):
         print('\nFinalizando...\n')
         flag = False
     else:
-        print('\nNumero Inválido\n')
+        print('\nOpção Inválida\n')
 
 
 
