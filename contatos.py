@@ -31,18 +31,24 @@ for i in bfs.find_all('div', class_='botao_links_acesso'):
 flag = True
 while(flag):
     print('Selecione a opção desejada:')
-    print('1 - Mostrar Todos os Contatos')
-    print('2 - Pesquisar Contato')
-    print('3 - Encerrar o Programa')
+    print('1 - Salvar Dados Capturados em um Arquivo')
+    print('2 - Mostrar Todos os Contatos')
+    print('3 - Pesquisar Contato')
+    print('4 - Encerrar o Programa')
 
     inp = str(input()).strip()
     
-    if(inp == '1'):
-        compare(' ', namelist, numberlist)
+    if(inp =='1'):
+        arquivo = open('newcontacts.txt', 'w')
+        for j in range(len(namelist)):
+            arquivo.write(str(namelist[j]) +  str(numberlist[j]))
+        arquivo.close()
     elif(inp == '2'):
+        compare(' ', namelist, numberlist)
+    elif(inp == '3'):
         search = str(input('Qual contato você procura? ')).strip()
         compare(search, namelist, numberlist)
-    elif(inp == '3'):
+    elif(inp == '4'):
         flag = False
     else:
         print('Numero Inválido')
