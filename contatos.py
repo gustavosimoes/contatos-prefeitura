@@ -33,7 +33,7 @@ for i in bfs.find_all('div', class_='botao_links_acesso'):
 
 flag = True
 while(flag):
-    print('Selecione a opção desejada:')
+    print('Selecione a opcao desejada:')
     print('1 - Salvar Dados Capturados em um Arquivo')
     print('2 - Mostrar Todos os Contatos')
     print('3 - Pesquisar Contato')
@@ -54,14 +54,14 @@ while(flag):
         print('\n')
     elif(inp == '3'):
         print('\n')
-        search = str(input('Qual contato você procura? ')).strip()
+        search = str(input('Qual contato voce procura? ')).strip()
         compare(search, namelist, numberlist)
         print('\n')
     elif(inp == '4'):
         print('\nFinalizando...\n')
         flag = False
     else:
-        print('\nOpção Inválida\n')
+        print('\nOpcao Invalida\n')
 
 
 
